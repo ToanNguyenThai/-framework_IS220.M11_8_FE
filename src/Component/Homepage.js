@@ -9,10 +9,7 @@ import Service from './Section/Service';
 import Sanphammoi from './Section/Sanphammoi';
 import Sanphamhot from './Section/Sanphamhot';
 import Thuonghieu from './Section/Thuonghieu';
-
 import Footer from './Section/Footer';
-
-import { DataProvider } from './Context';
 
 class Homepage extends Component {
     
