@@ -129,25 +129,5 @@
     }
   ],
   "cart": [],
-  "account": [],
-  "employee": [
-    {
-      "employee_id": "1",
-      "employee_name": "Toàn",
-      "employee_address": "Q10 HCM",
-      "employee_gender": "Nam",
-      "employee_phone": "0934189092",
-      "employee_username":  "admin_toannt",
-      "employee_password": "123" 
-    },
-    {
-      "employee_id": "2",
-      "employee_name": "Linh",
-      "employee_address": "Q5 HCM",
-      "employee_gender": "Nam",
-      "employee_phone": "0703667106",
-      "employee_username":  "user_linhtl",
-      "employee_password": "123" 
-    }
-  ]
+  "account": []
 }
