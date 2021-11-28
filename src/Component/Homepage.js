@@ -27,12 +27,8 @@ class Homepage extends Component {
                     <Thuonghieu></Thuonghieu>
                     <Footer></Footer>
                 </div>
-            
-
-
         );
     }
-
 }
 
 export default Homepage;
