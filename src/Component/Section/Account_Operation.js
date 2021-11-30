@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 import { AccountContext } from '../Context'

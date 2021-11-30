@@ -15,8 +15,7 @@ class Homepage extends Component {
     
     render() {
        
-        return (
-            
+        return (           
                 <div>
                     <Header></Header>
                     <Navigation></Navigation>

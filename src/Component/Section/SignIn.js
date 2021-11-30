@@ -86,6 +86,9 @@ class SignIn extends Component {
                                         <span>E-mail: </span>
                                         <span className="info-data">{item.email} </span>
                                     </div>
+
+                                    <div className="order-history"><u>Xem lịch sử đặt hàng</u></div>
+
                                     <div className="btn-area">
                                         <button onClick={() => this.context.Logout()}>Đăng xuất</button>
                                     </div>

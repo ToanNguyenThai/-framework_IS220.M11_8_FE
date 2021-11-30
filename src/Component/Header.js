@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { DataContext } from './Context';
 import Account_Operation from './Section/Account_Operation';
-import SignIn from './Section/SignIn';
 class Header extends Component {
     static contextType = DataContext;
     state = {
@@ -27,30 +26,37 @@ class Header extends Component {
             return (
                 <div>
                     <header>
-                        <div className="main-container grid">
-                            <a href="#" className="homeReload">
-                                <Link to="/">
-                                    <img src="/img/logo.png" alt="" />
-                                </Link>
+                    <div className="main-container grid">
+                        <a href="#" className="homeReload">
+                            <Link to="/">
+                                <img src="/img/logo.png" alt="" />
+                            </Link>
 
-                            </a>
-                            <input type="text" name id="searchBar" placeholder="&#61442;   Tìm kiếm sản phẩm" />
-                            <div className="operation">
-
-                                <div onClick={() => this.showForm()} href className="account">
-                                    <i className="far fa-user" />
-                                </div>
-
-                                <Link to="/Cart">
-                                    <div href className="cart">
-                                        <i id="cart_icon" className="fas fa-shopping-cart" />
-                                        <div className="cart_number">{cart.length}</div>
-                                    </div>
-                                </Link>
-
-
-                            </div>
+                        </a>
+                        <div className="searchArea">
+                            <input onChange={this.setfindValue} type="text" name id="searchBar" placeholder="Tìm kiếm sản phẩm"/>
+                            <Link exact to={`/Sanpham_display/${this.state.find_value}`} >
+                                <i class="fas fa-search"></i>
+                            </Link>
+                            
                         </div>
+                        
+                        <div className="operation">
+
+                            <div onClick={() => this.showForm()} href className="account">
+                                <i className="far fa-user" />
+                            </div>
+
+                            <Link to="/Cart">
+                                <div href className="cart">
+                                    <i id="cart_icon" className="fas fa-shopping-cart" />
+                                    <div className="cart_number">{cart.length}</div>
+                                </div>
+                            </Link>
+
+
+                        </div>
+                    </div>
                     </header>
                     <Account_Operation></Account_Operation>
                     

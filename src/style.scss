@@ -1471,11 +1471,20 @@ header {
                 padding-left: 10px;
             }
         }
+        .order-history{
+            margin-top: 17px;
+            text-align: center;
+            cursor: pointer;
+            font : {
+                size: 16px;
+                family: $main-font;
+            }
+        }
         .btn-area {
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-top: 50px;
+            margin-top: 28px;
             button {
                 cursor: pointer;
                 width: 310px;

@@ -1691,6 +1691,14 @@ header .main-container .operation .cart_number {
   padding-left: 10px;
 }
 
+.overlay-container .Information .order-history {
+  margin-top: 17px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .overlay-container .Information .btn-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1699,7 +1707,7 @@ header .main-container .operation .cart_number {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 28px;
 }
 
 .overlay-container .Information .btn-area button {
