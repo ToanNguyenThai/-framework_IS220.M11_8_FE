@@ -5,21 +5,21 @@ import Footer from './Footer';
 import axios from 'axios';
 import { DataContext } from '../Context'
 
-class Cart extends Component {
+class Order_History extends Component {
     static contextType = DataContext;
     
-    
-
     render() {
-        const { cart, total, account } = this.context;
+        const { cart } = this.context; 
+        console.log(cart);
         return (
             <div>
                 <Header></Header>
                 <Navigation></Navigation>
+                    order history
                 <Footer></Footer>
             </div>
         )
     }
 
 }
-export default Cart;
+export default Order_History;

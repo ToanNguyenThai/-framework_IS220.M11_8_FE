@@ -14,7 +14,7 @@ class Navigation extends Component {
 
                     </li>
                     <li className="item">
-                        <Link to="/Gioithieu">
+                        <Link to={"./Gioithieu"}>
                             <a >GIỚI THIỆU</a>
                         </Link>
 

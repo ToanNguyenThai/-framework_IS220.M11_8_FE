@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 import { AccountContext } from '../Context'
 import { DataContext } from '../Context'
 
@@ -87,7 +87,10 @@ class SignIn extends Component {
                                         <span className="info-data">{item.email} </span>
                                     </div>
 
-                                    <div className="order-history"><u>Xem lịch sử đặt hàng</u></div>
+                                    <Link to="/Order_History" >
+                                        <div className="order-history"><u>Xem lịch sử đặt hàng</u></div>
+                                    </Link>
+                                    
 
                                     <div className="btn-area">
                                         <button onClick={() => this.context.Logout()}>Đăng xuất</button>

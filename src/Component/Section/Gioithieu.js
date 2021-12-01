@@ -3,7 +3,7 @@ import Header from '../Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
-class Sanpham_displayAll extends Component {
+class Gioithieu extends Component {
 
     render() {
         return (
@@ -26,4 +26,4 @@ class Sanpham_displayAll extends Component {
     }
 
 }
-export default Sanpham_displayAll;
+export default Gioithieu;

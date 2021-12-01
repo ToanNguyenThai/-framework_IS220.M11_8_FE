@@ -30,14 +30,15 @@ export class DataProvider extends Component {
     
     }
     
-    componentWillUpdate() { // immmediately update employee after signup without refreshing
+    /* componentWillUpdate() { // immmediately update employee after signup without refreshing
         callApi('employee', "GET", null).then(res=>{
             this.setState({
                 employee: res.data
             })
         })
 
-    }
+    } */
+    
     addtoCart = (id, color, size) =>{
         
         const {products, cart} = this.state;
