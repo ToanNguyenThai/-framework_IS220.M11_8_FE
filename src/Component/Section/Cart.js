@@ -28,11 +28,15 @@ class Cart extends Component {
                 order: this.context.cart,
                 clientID: UserID
             }
-          });
+        });
+
+        alert("Đặt hàng thành công !")
+        
+        
     }
     render() {
         const { cart, total, account } = this.context;
-        
+
         if (cart.length === 0 && Object.keys(account).length === 0) {
             return (
                 <div>

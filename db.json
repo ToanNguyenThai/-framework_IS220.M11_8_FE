@@ -128,8 +128,204 @@
       "password": "123"
     }
   ],
-  "cart": [],
-  "account": [],
+  "cart": [
+    {
+      "order": [
+        {
+          "index": 0,
+          "array": [
+            {
+              "id": "1",
+              "name": "Nike Air Max 1 Ultra Essential",
+              "role": "Gym & Training",
+              "price": 3390000,
+              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
+              "details_sideImg": [
+                "/img/product_details2/details_1_1.jpg",
+                "/img/product_details2/details_1_2.jpg",
+                "/img/product_details2/details_1_3.jpg"
+              ],
+              "purpose": "Gym & Training",
+              "color": [
+                "Vàng",
+                "Tím",
+                "Xanh"
+              ],
+              "size": [
+                40,
+                41,
+                42
+              ],
+              "number": 1
+            }
+          ],
+          "id": "1",
+          "color": "Vàng",
+          "size": "40",
+          "amount": 2
+        }
+      ],
+      "clientID": "1",
+      "id": 1
+    },
+    {
+      "order": [
+        {
+          "index": 0,
+          "array": [
+            {
+              "id": "1",
+              "name": "Nike Air Max 1 Ultra Essential",
+              "role": "Gym & Training",
+              "price": 3390000,
+              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
+              "details_sideImg": [
+                "/img/product_details2/details_1_1.jpg",
+                "/img/product_details2/details_1_2.jpg",
+                "/img/product_details2/details_1_3.jpg"
+              ],
+              "purpose": "Gym & Training",
+              "color": [
+                "Vàng",
+                "Tím",
+                "Xanh"
+              ],
+              "size": [
+                40,
+                41,
+                42
+              ],
+              "number": 1
+            }
+          ],
+          "id": "1",
+          "color": "Vàng",
+          "size": "40",
+          "amount": 2
+        }
+      ],
+      "clientID": "1",
+      "id": 2
+    },
+    {
+      "order": [
+        {
+          "index": 0,
+          "array": [
+            {
+              "id": "1",
+              "name": "Nike Air Max 1 Ultra Essential",
+              "role": "Gym & Training",
+              "price": 3390000,
+              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
+              "details_sideImg": [
+                "/img/product_details2/details_1_1.jpg",
+                "/img/product_details2/details_1_2.jpg",
+                "/img/product_details2/details_1_3.jpg"
+              ],
+              "purpose": "Gym & Training",
+              "color": [
+                "Vàng",
+                "Tím",
+                "Xanh"
+              ],
+              "size": [
+                40,
+                41,
+                42
+              ],
+              "number": 1
+            }
+          ],
+          "id": "1",
+          "color": "Vàng",
+          "size": "40",
+          "amount": 2
+        }
+      ],
+      "clientID": "1",
+      "id": 3
+    },
+    {
+      "order": [
+        {
+          "index": 0,
+          "array": [
+            {
+              "id": "1",
+              "name": "Nike Air Max 1 Ultra Essential",
+              "role": "Gym & Training",
+              "price": 3390000,
+              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
+              "details_sideImg": [
+                "/img/product_details2/details_1_1.jpg",
+                "/img/product_details2/details_1_2.jpg",
+                "/img/product_details2/details_1_3.jpg"
+              ],
+              "purpose": "Gym & Training",
+              "color": [
+                "Vàng",
+                "Tím",
+                "Xanh"
+              ],
+              "size": [
+                40,
+                41,
+                42
+              ],
+              "number": 1
+            }
+          ],
+          "id": "1",
+          "color": "Vàng",
+          "size": "40",
+          "amount": 2
+        }
+      ],
+      "clientID": "1",
+      "id": 4
+    },
+    {
+      "order": [
+        {
+          "index": 0,
+          "array": [
+            {
+              "id": "1",
+              "name": "Nike Air Max 1 Ultra Essential",
+              "role": "Gym & Training",
+              "price": 3390000,
+              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
+              "details_sideImg": [
+                "/img/product_details2/details_1_1.jpg",
+                "/img/product_details2/details_1_2.jpg",
+                "/img/product_details2/details_1_3.jpg"
+              ],
+              "purpose": "Gym & Training",
+              "color": [
+                "Vàng",
+                "Tím",
+                "Xanh"
+              ],
+              "size": [
+                40,
+                41,
+                42
+              ],
+              "number": 1
+            }
+          ],
+          "id": "1",
+          "color": "Vàng",
+          "size": "40",
+          "amount": 3
+        }
+      ],
+      "clientID": "1",
+      "id": 5
+    }
+  ],
+  "order_history": [],
   "employee": [
     {
       "employee_id": "1",

@@ -15,9 +15,6 @@ class App extends Component {
                     <Section></Section>
                 </div>
             </DataProvider>
-
-
-
         );
     }
 

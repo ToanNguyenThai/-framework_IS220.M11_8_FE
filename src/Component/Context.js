@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import callApi from './Callapi';
+import axios from 'axios';
 export const DataContext = React.createContext("1");
 export const AccountContext = React.createContext("2");
 
@@ -11,7 +12,7 @@ export class DataProvider extends Component {
         clients: [],
         cart : [],
         account:[],
-        oder_history: [], 
+        order_history: [],
         total: 0
     }
     componentDidMount(){
@@ -30,14 +31,13 @@ export class DataProvider extends Component {
     
     }
     
-    /* componentWillUpdate() { // immmediately update employee after signup without refreshing
+    componentWillUpdate() { // immmediately update employee after signup without refreshing
         callApi('employee', "GET", null).then(res=>{
             this.setState({
                 employee: res.data
             })
         })
-
-    } */
+    }
     
     addtoCart = (id, color, size) =>{
         
@@ -59,7 +59,9 @@ export class DataProvider extends Component {
             this.setState({
                 cart: [...cart, {index, array, id, color, size, amount}]
             })
+                     
             alert("Thêm sản phẩm thành công")
+
             console.log(cart);
         }
         else alert("Sản phẩm đã tồn tại trong giỏ hàng")
@@ -173,11 +175,13 @@ export class DataProvider extends Component {
         })
         
     }
+
+    
     render() {
-        const {products, cart, account, clients, total} = this.state;
-        const {addtoCart, getPrice, increase, decrease, remove, getMultiplePrice, getTotal ,Login, Logout} = this;
+        const {products, cart, account, clients, total, order_history} = this.state;
+        const {addtoCart, getPrice, increase, decrease, remove, getMultiplePrice, getTotal ,Login, Logout, addCart_toOrder} = this;
         return (
-            <DataContext.Provider value={{products,cart,account, clients, total,addtoCart, getPrice,increase, decrease, remove, getMultiplePrice, getTotal,Login, Logout} }>
+            <DataContext.Provider value={{products,cart,account, clients, total, order_history, addtoCart, getPrice,increase, decrease, remove, getMultiplePrice, getTotal,Login, Logout, addCart_toOrder} }>
                 {this.props.children}
             </DataContext.Provider>
         );

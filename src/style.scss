@@ -29,7 +29,7 @@ header {
             margin-top: 13px;
             outline: none;
         }
-        .searchArea{
+        .searchArea {
             position: relative;
             margin-top: 13px;
             width: 200px;
@@ -40,12 +40,12 @@ header {
             padding-left: 20px;
             margin-left: 500px;
             outline: none;
-            #searchBar {         
+            #searchBar {
                 width: 150px;
                 height: 40px;
                 border: none;
                 border-radius: 50px;
-                background-color: #e4e4e4 !important;         
+                background-color: #e4e4e4 !important;
                 outline: none;
                 font: {
                     family: $main-font;
@@ -53,19 +53,18 @@ header {
                     size: 13px;
                 }
             }
-            a{
+            a {
                 text-decoration: none;
                 color: black;
             }
-            i{
+            i {
                 position: absolute;
                 top: 12px;
                 right: 20px;
                 cursor: pointer;
-                
             }
         }
-        
+
         .operation {
             display: flex;
             .account,
@@ -809,7 +808,7 @@ header {
     .right_products {
         width: 100%;
         height: 100%;
-        display: flex;       
+        display: flex;
         flex-wrap: wrap;
         .item {
             box-shadow: 0px 3px 14px #d9d9d9;
@@ -1193,7 +1192,6 @@ header {
             text-align: center;
             margin: 0;
             padding-top: 20px;
-           
         }
         h2 {
             font-family: $main-font;
@@ -1206,12 +1204,12 @@ header {
             font-family: $main-font;
             font-size: 16px;
             padding-left: 25px;
-            .info-data  {
+            .info-data {
                 color: $main-color;
                 font-weight: 700;
                 padding-left: 10px;
             }
-            #price{
+            #price {
                 color: #b2008d;
                 padding-left: 10px;
                 font: {
@@ -1471,7 +1469,7 @@ header {
                 padding-left: 10px;
             }
         }
-        .order-history{
+        .order-history {
             margin-top: 17px;
             text-align: center;
             cursor: pointer;
@@ -1501,5 +1499,87 @@ header {
                 }
             }
         }
+    }
+}
+
+.order-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    
+    h3{
+        text-align: center;
+        font: {
+            size: 25px;
+            family: $main-font
+        }
+    }
+    .order-details{
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0.1rem 0.25rem grey;
+        display: flex;
+        justify-content: space-between;
+        .order-products{
+            width: 100%;
+            .order_id{
+                margin: 0;
+                margin-top: 10px;
+            }
+            .cartItem_mainContainer {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 100%;
+                display: flex;
+                
+                .img-main {
+                    img {
+                        margin-left: 30px;
+                        width: 262.5px;
+                        height: 262.5px;
+                    }
+                }
+                .information {
+                    margin-left: 50px;
+                    margin-top: 20px;
+                    a {
+                        text-decoration: none;
+                    }
+                    height: 100%;
+                    width: 360px;
+                    .name,
+                    .price,
+                    .color,
+                    .size, .amount {
+                        margin: 0;
+                        font-family: $main-font;
+                        text-align: left;
+                    }
+                    .color,
+                    .size {
+                        padding-top: 10px;
+                        font-size: 15px;
+                    }
+                    .name {
+                        font-size: 23px;
+                        
+                    }
+                    .separate {
+                        margin-top: 20px;
+                        width: 300px;
+                        height: 2px;
+                        background-color: $main-color;
+                    }
+                    .price {
+                        margin-top: 15px;
+                        color: #b2008d;
+                    }
+                    .amount {
+                        margin-top: 20px;                        
+                    }
+                    
+                }
+            }
+        }       
     }
 }

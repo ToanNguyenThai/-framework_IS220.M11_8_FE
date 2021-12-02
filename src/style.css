@@ -1723,4 +1723,99 @@ header .main-container .operation .cart_number {
   font-weight: 600;
   font-size: 15px;
 }
+
+.order-container {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.order-container h3 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.order-container .order-details {
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0.1rem 0.25rem grey;
+          box-shadow: 0 0.1rem 0.25rem grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.order-container .order-details .order-products {
+  width: 100%;
+}
+
+.order-container .order-details .order-products .order_id {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .img-main img {
+  margin-left: 30px;
+  width: 262.5px;
+  height: 262.5px;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information {
+  margin-left: 50px;
+  margin-top: 20px;
+  height: 100%;
+  width: 360px;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information a {
+  text-decoration: none;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .name,
+.order-container .order-details .order-products .cartItem_mainContainer .information .price,
+.order-container .order-details .order-products .cartItem_mainContainer .information .color,
+.order-container .order-details .order-products .cartItem_mainContainer .information .size, .order-container .order-details .order-products .cartItem_mainContainer .information .amount {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .color,
+.order-container .order-details .order-products .cartItem_mainContainer .information .size {
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .name {
+  font-size: 23px;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .separate {
+  margin-top: 20px;
+  width: 300px;
+  height: 2px;
+  background-color: #58b3f0;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .price {
+  margin-top: 15px;
+  color: #b2008d;
+}
+
+.order-container .order-details .order-products .cartItem_mainContainer .information .amount {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
