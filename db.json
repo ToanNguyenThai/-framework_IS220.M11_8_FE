@@ -128,207 +128,11 @@
       "password": "123"
     }
   ],
-  "cart": [
-    {
-      "order": [
-        {
-          "index": 0,
-          "array": [
-            {
-              "id": "1",
-              "name": "Nike Air Max 1 Ultra Essential",
-              "role": "Gym & Training",
-              "price": 3390000,
-              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
-              "details_sideImg": [
-                "/img/product_details2/details_1_1.jpg",
-                "/img/product_details2/details_1_2.jpg",
-                "/img/product_details2/details_1_3.jpg"
-              ],
-              "purpose": "Gym & Training",
-              "color": [
-                "Vàng",
-                "Tím",
-                "Xanh"
-              ],
-              "size": [
-                40,
-                41,
-                42
-              ],
-              "number": 1
-            }
-          ],
-          "id": "1",
-          "color": "Vàng",
-          "size": "40",
-          "amount": 2
-        }
-      ],
-      "clientID": "1",
-      "id": 1
-    },
-    {
-      "order": [
-        {
-          "index": 0,
-          "array": [
-            {
-              "id": "1",
-              "name": "Nike Air Max 1 Ultra Essential",
-              "role": "Gym & Training",
-              "price": 3390000,
-              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
-              "details_sideImg": [
-                "/img/product_details2/details_1_1.jpg",
-                "/img/product_details2/details_1_2.jpg",
-                "/img/product_details2/details_1_3.jpg"
-              ],
-              "purpose": "Gym & Training",
-              "color": [
-                "Vàng",
-                "Tím",
-                "Xanh"
-              ],
-              "size": [
-                40,
-                41,
-                42
-              ],
-              "number": 1
-            }
-          ],
-          "id": "1",
-          "color": "Vàng",
-          "size": "40",
-          "amount": 2
-        }
-      ],
-      "clientID": "1",
-      "id": 2
-    },
-    {
-      "order": [
-        {
-          "index": 0,
-          "array": [
-            {
-              "id": "1",
-              "name": "Nike Air Max 1 Ultra Essential",
-              "role": "Gym & Training",
-              "price": 3390000,
-              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
-              "details_sideImg": [
-                "/img/product_details2/details_1_1.jpg",
-                "/img/product_details2/details_1_2.jpg",
-                "/img/product_details2/details_1_3.jpg"
-              ],
-              "purpose": "Gym & Training",
-              "color": [
-                "Vàng",
-                "Tím",
-                "Xanh"
-              ],
-              "size": [
-                40,
-                41,
-                42
-              ],
-              "number": 1
-            }
-          ],
-          "id": "1",
-          "color": "Vàng",
-          "size": "40",
-          "amount": 2
-        }
-      ],
-      "clientID": "1",
-      "id": 3
-    },
-    {
-      "order": [
-        {
-          "index": 0,
-          "array": [
-            {
-              "id": "1",
-              "name": "Nike Air Max 1 Ultra Essential",
-              "role": "Gym & Training",
-              "price": 3390000,
-              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
-              "details_sideImg": [
-                "/img/product_details2/details_1_1.jpg",
-                "/img/product_details2/details_1_2.jpg",
-                "/img/product_details2/details_1_3.jpg"
-              ],
-              "purpose": "Gym & Training",
-              "color": [
-                "Vàng",
-                "Tím",
-                "Xanh"
-              ],
-              "size": [
-                40,
-                41,
-                42
-              ],
-              "number": 1
-            }
-          ],
-          "id": "1",
-          "color": "Vàng",
-          "size": "40",
-          "amount": 2
-        }
-      ],
-      "clientID": "1",
-      "id": 4
-    },
-    {
-      "order": [
-        {
-          "index": 0,
-          "array": [
-            {
-              "id": "1",
-              "name": "Nike Air Max 1 Ultra Essential",
-              "role": "Gym & Training",
-              "price": 3390000,
-              "imgSrc": "/img/trang_air-max-1-ultra-essential-shoe_1_large.jpg",
-              "details_sideImg": [
-                "/img/product_details2/details_1_1.jpg",
-                "/img/product_details2/details_1_2.jpg",
-                "/img/product_details2/details_1_3.jpg"
-              ],
-              "purpose": "Gym & Training",
-              "color": [
-                "Vàng",
-                "Tím",
-                "Xanh"
-              ],
-              "size": [
-                40,
-                41,
-                42
-              ],
-              "number": 1
-            }
-          ],
-          "id": "1",
-          "color": "Vàng",
-          "size": "40",
-          "amount": 3
-        }
-      ],
-      "clientID": "1",
-      "id": 5
-    }
-  ],
+  "cart": [],
   "order_history": [],
   "employee": [
     {
-      "employee_id": "1",
+      "id": "wefwefe",
       "employee_name": "Toàn",
       "employee_address": "Q10 HCM",
       "employee_gender": "Nam",
@@ -337,13 +141,31 @@
       "employee_password": "123"
     },
     {
-      "employee_id": "2",
+      "id": "ghjghjtr",
       "employee_name": "Linh",
       "employee_address": "Q5 HCM",
       "employee_gender": "Nam",
       "employee_phone": "0703667106",
       "employee_username": "user_linhtl",
       "employee_password": "123"
+    },
+    {
+      "employee_name": "Trung",
+      "employee_address": "Gia Lai",
+      "employee_gender": "Nam",
+      "employee_phone": "0903649764",
+      "employee_username": "admin_trungpd",
+      "employee_password": "123",
+      "id": "FQbzvyP"
+    },
+    {
+      "employee_name": "Hằng",
+      "employee_address": "Việt Nam",
+      "employee_gender": "Nữ",
+      "employee_phone": "0334546777",
+      "employee_username": "user_hanglk",
+      "employee_password": "123",
+      "id": "ZMrUoQh"
     }
   ]
 }
