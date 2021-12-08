@@ -7,8 +7,9 @@ import { DataContext } from '../Context'
 class Sanphamhot extends Component {
     static contextType = DataContext;
     render() {
-       
+
         const { products } = this.context;
+        console.log(products);
         return (
             <div className="hotItem">
                 <div className="title-area grid">
@@ -20,17 +21,19 @@ class Sanphamhot extends Component {
                     <div className="right-separate"></div>
                 </div>
                 <div className="newItem-mainContainer grid">
-                {
+                    {
                         products.map(product => (
                             <div className="item">
-                                <img src={product.imgSrc}></img>
+                                <Link to={`/Sanpham_chiTiet/${product.id}`}>
+                                    <img src={product.imageURL}></img>
+                                </Link>
                                 <div className="item-information">
                                     <div className="item-name-wrap">
-                                        <a className="item-name" href="#">
-                                            {product.name}
-                                        </a>
+                                        <Link className="item-name" to={`/Sanpham_chiTiet/${product.id}`}>
+                                            {product.product_name}
+                                        </Link>
                                     </div>
-                                    <div className="item-purpose">{product.purpose}</div>
+                                    <div className="item-purpose">{product.product_type}</div>
                                     <div className="item-separate"></div>
                                     <div className="item-price">{this.context.getPrice(product.id)}đ</div>
                                 </div>

@@ -98,22 +98,22 @@ class Sanpham_chiTiet extends Component {
                             <div className="chiTiet_mainContainer grid" key={item.id}>
                                 <div className="img-choose">
                                     {
-                                        item.details_sideImg.map((imgItem, key) => (
+                                        item.product_images.map((imgItem, key) => (
                                             <img id={key} onClick={() => this.changeImg(key)} className="img-choose-item" src={imgItem}></img>
                                         ))
                                     }
                                 </div>
                                 <div className="img-main">
-                                    <img src={item.details_sideImg[0]}></img>
+                                    <img src={item.product_images[0]}></img>
                                 </div>
                                 <div className="operation">
-                                    <h3 className="name">{item.name}</h3>
+                                    <h3 className="name">{item.product_name}</h3>
                                     <div className="separate"></div>
                                     <h2 className="price">{this.context.getPrice(item.id)}đ</h2>
                                     <div className="colorArea">
                                         <span>Màu sắc</span>
                                         {
-                                            item.color.map((colorItem, key) => (
+                                            item.product_colors.map((colorItem, key) => (
                                                 <div id={key} onClick={() => this.chooseColor(key)} className="color_options">{colorItem}</div>
                                             ))
                                         }
@@ -122,7 +122,7 @@ class Sanpham_chiTiet extends Component {
                                     <div className="sizeArea">
                                         <span>Kích thước</span>
                                         {
-                                            item.size.map((sizeItem, key) => (
+                                            item.product_sizes.map((sizeItem, key) => (
                                                 <div id={key} onClick={() => this.chooseSize(key)} className="size_options">{sizeItem}</div>
                                             ))
                                         }

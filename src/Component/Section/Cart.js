@@ -36,7 +36,7 @@ class Cart extends Component {
     }
     render() {
         const { cart, total, account } = this.context;
-
+        console.log(cart);
         if (cart.length === 0 && Object.keys(account).length === 0) {
             return (
                 <div>
@@ -62,10 +62,10 @@ class Cart extends Component {
                                         item.array.map(cartItem => (
                                             <div className="cartItem_mainContainer" key={cartItem.id}>
                                                 <div className="img-main">
-                                                    <img src={cartItem.imgSrc}></img>
+                                                    <img src={cartItem.imageURL}></img>
                                                 </div>
                                                 <div className="information">
-                                                    <h3 className="name">{cartItem.name}</h3>
+                                                    <h3 className="name">{cartItem.product_name}</h3>
                                                     <div className="separate"></div>
                                                     <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.amount)}đ</h2>
                                                     <h3 className="color">Màu sắc: {item.color}</h3>
@@ -109,10 +109,10 @@ class Cart extends Component {
                                         item.array.map(cartItem => (
                                             <div className="cartItem_mainContainer" key={cartItem.id}>
                                                 <div className="img-main">
-                                                    <img src={cartItem.imgSrc}></img>
+                                                    <img src={cartItem.imageURL}></img>
                                                 </div>
                                                 <div className="information">
-                                                    <h3 className="name">{cartItem.name}</h3>
+                                                    <h3 className="name">{cartItem.product_name}</h3>
                                                     <div className="separate"></div>
                                                     <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.amount)}đ</h2>
                                                     <h3 className="color">Màu sắc: {item.color}</h3>
@@ -140,19 +140,19 @@ class Cart extends Component {
                                         <div>
                                             <div className="payment-info">
                                                 <span>Tên khách hàng: </span>
-                                                <span className="info-data">{item.name} </span>
+                                                <span className="info-data">{item.customer_name} </span>
                                             </div>
                                             <div className="payment-info">
                                                 <span>Số điện thoại: </span>
-                                                <span className="info-data">{item.phoneNumber} </span>
+                                                <span className="info-data">{item.customer_phoneNumber} </span>
                                             </div>
                                             <div className="payment-info">
                                                 <span>Địa chỉ: </span>
-                                                <span className="info-data">{item.address} </span>
+                                                <span className="info-data">{item.customer_address} </span>
                                             </div>
                                             <div className="payment-info">
                                                 <span>E-mail: </span>
-                                                <span className="info-data">{item.email} </span>
+                                                <span className="info-data">{item.customer_email} </span>
                                             </div>
                                             <div className="payment-info" id="total">
                                                 <span>Tổng tiền: </span>

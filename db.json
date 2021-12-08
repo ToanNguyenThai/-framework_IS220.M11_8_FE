@@ -112,15 +112,15 @@
   ],
   "clients": [
     {
-      "id": "1",
       "name": "Toàn",
-      "phoneNumber": "0934189092",
       "address": "Q10 HCM",
-      "email": "toan@gmail.com",
-      "password": "123"
+      "phoneNumber": "0934189092",
+      "email": "toan9015@gmail.com",
+      "password": "123",
+      "id": "rutjejss"
     },
     {
-      "id": "2",
+      "id": "nbhiuvwe",
       "name": "Linh",
       "phoneNumber": "0703667106",
       "address": "Q5 HCM",
@@ -132,13 +132,13 @@
   "order_history": [],
   "employee": [
     {
-      "id": "wefwefe",
       "employee_name": "Toàn",
-      "employee_address": "Q10 HCM",
+      "employee_address": " HCM",
       "employee_gender": "Nam",
       "employee_phone": "0934189092",
       "employee_username": "admin_toannt",
-      "employee_password": "123"
+      "employee_password": "123",
+      "id": "wefwefe"
     },
     {
       "id": "ghjghjtr",
@@ -166,6 +166,15 @@
       "employee_username": "user_hanglk",
       "employee_password": "123",
       "id": "ZMrUoQh"
+    },
+    {
+      "employee_name": "Na",
+      "employee_address": "Tân Phú",
+      "employee_gender": "Nữ",
+      "employee_phone": "0934789090",
+      "employee_username": "user_na",
+      "employee_password": "123",
+      "id": "Jy53B35"
     }
   ]
 }

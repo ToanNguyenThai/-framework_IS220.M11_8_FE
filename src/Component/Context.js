@@ -16,28 +16,35 @@ export class DataProvider extends Component {
         total: 0
     }
     componentDidMount(){
-        callApi('products', "GET", null).then( res => {
+        axios({
+            method: 'GET',
+            url: 'https://localhost:44328/api/Products/GetAll',
+            data: null
+        }).then(res =>{
             this.setState({
                 products: res.data
             })
         })
 
-        callApi('clients', "GET", null).then(res=>{
+        axios({
+            method: 'GET',
+            url: 'https://localhost:44328/api/Customers/GetAll',
+            data: null
+        }).then(res =>{
             this.setState({
                 clients: res.data
             })
         })
-        
-    
     }
     
-    componentWillUpdate() { // immmediately update employee after signup without refreshing
+   /*  componentWillUpdate() { // immmediately update employee after signup without refreshing
         callApi('employee', "GET", null).then(res=>{
             this.setState({
                 employee: res.data
             })
         })
-    }
+
+    } */
     
     addtoCart = (id, color, size) =>{
         
@@ -71,7 +78,7 @@ export class DataProvider extends Component {
         let str_price = "";
         this.state.products.forEach((item) => {
             if (item.id === id)
-                str_price = item.price.toString()
+                str_price = item.product_price.toString()
         })
 
         str_price = str_price.slice(0, 1) + "," + str_price.slice(1)
@@ -113,7 +120,7 @@ export class DataProvider extends Component {
         let str_price = "";
         this.state.products.forEach((item) => {
             if (item.id === id)
-                str_price = (item.price*amount).toString()
+                str_price = (item.product_price*amount).toString()
         })
         if (str_price.length === 7) {
             //Chuõi giá tiền = 7 thì chèn , vô chỗ số 1 và 5
@@ -135,7 +142,7 @@ export class DataProvider extends Component {
         let res = 0;
         cart.forEach((cartitem) => {
             cartitem.array.forEach(item =>{
-                res = res + (item.price * cartitem.amount)
+                res = res + (item.product_price * cartitem.amount)
             })             
         })    
         let str_price = res.toString(); 
@@ -160,7 +167,7 @@ export class DataProvider extends Component {
     Login = (username, password) => {
         const { clients} = this.state
         const data = clients.filter(item => {
-            if  ( username === item.phoneNumber || username === item.email  && password===item.password )
+            if  ( username === item.customer_phoneNumber || username === item.customer_email  && password===item.customer_password )
                 return item
         })
         this.setState({

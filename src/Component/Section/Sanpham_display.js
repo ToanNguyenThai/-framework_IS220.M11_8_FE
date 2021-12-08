@@ -16,7 +16,7 @@ class Sanpham_display extends Component {
         if (this.props.match.params.condition) {
             const result = this.context.products;
             const role = result.map(item =>{
-                return item.purpose;
+                return item.product_type;
             })
             let data;
             let check = 0;
@@ -31,7 +31,7 @@ class Sanpham_display extends Component {
                 role.map(roleItem =>{
                     if (this.props.match.params.condition === roleItem ) {
                         data = result.filter(item => {
-                            return item.purpose === this.props.match.params.condition;
+                            return item.product_type === this.props.match.params.condition;
                         })
                     }
                     else if  (this.props.match.params.condition !== roleItem )
@@ -39,7 +39,7 @@ class Sanpham_display extends Component {
                 })
                 if (check == role.length){
                     data = result.filter(item => {
-                        if (item.name.toLowerCase().includes((this.props.match.params.condition).toLowerCase()))
+                        if (item.product_name.toLowerCase().includes((this.props.match.params.condition).toLowerCase()))
                              return item;
                     })
                 }
@@ -60,7 +60,7 @@ class Sanpham_display extends Component {
     componentWillUpdate(nextProps) {
         const result = this.context.products;
         const role = result.map(item =>{
-            return item.purpose;
+            return item.product_type;
         })
         let data;
         let check = 0;
@@ -70,7 +70,7 @@ class Sanpham_display extends Component {
             role.map(roleItem =>{
                 if (nextProps.match.params.condition === roleItem ) {
                     data = result.filter(item => {
-                        return item.purpose === nextProps.match.params.condition;
+                        return item.product_type === nextProps.match.params.condition;
                     })
                 }
                 else if  (nextProps.match.params.condition !== roleItem )
@@ -79,7 +79,7 @@ class Sanpham_display extends Component {
             // Tìm kiếm dựa vào tên sản phẩm
             if (check == role.length){
                 data = result.filter(item => {
-                    if (item.name.toLowerCase().includes((nextProps.match.params.condition).toLowerCase()))
+                    if (item.product_name.toLowerCase().includes((nextProps.match.params.condition).toLowerCase()))
                          return item;
                 })
             }
@@ -97,26 +97,25 @@ class Sanpham_display extends Component {
                 <Header></Header>
                 <Navigation></Navigation>
                 <div className="display_mainContainer grid">
-                    
-                    
+                                    
                     <div className="right_products">
                     
                     {
                         products.map(product => (
                             <div className="item" key={product.id}>
                                 <Link to ={`/Sanpham_chiTiet/${product.id}`}>
-                                    <img src={product.imgSrc}></img>
+                                    <img src={product.imageURL}></img>
                                 </Link>
                                 
                                 <div className="item-information">
                                     <div className="item-name-wrap">
                                     <Link className="item-name" to ={`/Sanpham_chiTiet/${product.id}`}>
-                                        {product.name}
+                                        {product.product_name}
                                     </Link>
                                         
                                     </div>
                                     
-                                    <div className="item-purpose">{product.purpose}</div>
+                                    <div className="item-purpose">{product.product_type}</div>
                                     <div className="item-separate"></div>
                                     <div className="item-price">{this.context.getPrice(product.id)}đ</div>
                                 </div>

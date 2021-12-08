@@ -22,6 +22,7 @@ class Header extends Component {
     }
     render() {
         const { cart } = this.context;
+        console.log(this.context.clients);
         if (this.state.form === true) {
             return (
                 <div>

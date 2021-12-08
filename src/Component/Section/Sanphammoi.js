@@ -16,22 +16,19 @@ class Sanphammoi extends Component {
                     <div className="right-separate"></div>
                 </div>
                 <div className="newItem-mainContainer grid">
-                {
+                    {
                         products.map(product => (
-                            <div className="item" key={product.id}>
-                                <Link to ={`/Sanpham_chiTiet/${product.id}`}>
-                                    <img src={product.imgSrc}></img>
+                            <div className="item">
+                                <Link to={`/Sanpham_chiTiet/${product.id}`}>
+                                    <img src={product.imageURL}></img>
                                 </Link>
-                                
                                 <div className="item-information">
                                     <div className="item-name-wrap">
-                                    <Link className="item-name" to ={`/Sanpham_chiTiet/${product.id}`}>
-                                        {product.name}
-                                    </Link>
-                                        
+                                        <Link className="item-name" to={`/Sanpham_chiTiet/${product.id}`}>
+                                            {product.product_name}
+                                        </Link>
                                     </div>
-                                    
-                                    <div className="item-purpose">{product.purpose}</div>
+                                    <div className="item-purpose">{product.product_type}</div>
                                     <div className="item-separate"></div>
                                     <div className="item-price">{this.context.getPrice(product.id)}đ</div>
                                 </div>

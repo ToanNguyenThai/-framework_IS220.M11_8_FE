@@ -40,7 +40,7 @@ class SignIn extends Component {
 
         var errorElement = document.getElementById("error-area");
         const data = array.filter(item => {
-            if ((this.state.username === item.phoneNumber || this.state.username === item.email) && this.state.password === item.password)
+            if ((this.state.username === item.customer_phoneNumber || this.state.username === item.customer_email) && this.state.password === item.customer_password)
                 return item
         })
 
@@ -72,19 +72,19 @@ class SignIn extends Component {
                                 <div>
                                     <div className="info">
                                         <span>Tên khách hàng: </span>
-                                        <span className="info-data">{item.name} </span>
+                                        <span className="info-data">{item.customer_name} </span>
                                     </div>
                                     <div className="info">
                                         <span>Số điện thoại: </span>
-                                        <span className="info-data">{item.phoneNumber} </span>
+                                        <span className="info-data">{item.customer_phoneNumber} </span>
                                     </div>
                                     <div className="info">
                                         <span>Địa chỉ: </span>
-                                        <span className="info-data">{item.address} </span>
+                                        <span className="info-data">{item.customer_address} </span>
                                     </div>
                                     <div className="info">
                                         <span>E-mail: </span>
-                                        <span className="info-data">{item.email} </span>
+                                        <span className="info-data">{item.customer_email} </span>
                                     </div>
 
                                     <Link to="/Order_History" >
