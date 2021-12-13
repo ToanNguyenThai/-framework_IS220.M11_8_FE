@@ -52,13 +52,14 @@ class SignUp extends Component {
         
         axios({
             method: 'POST',
-            url: 'http://localhost:3000/clients',
+            url: 'https://localhost:44328/api/Customers',
             data: {
-                name: this.state.name,
-                email: this.state.email,
-                phoneNumber: this.state.phone,
-                password: this.state.password,
-                address: this.state.address
+                id: "",
+                customer_name: this.state.name,
+                customer_email: this.state.email,
+                customer_phoneNumber: this.state.phone,
+                customer_password: this.state.password,
+                customer_address: this.state.address
             }
         });
         var form = document.querySelector("#signUp-form");
