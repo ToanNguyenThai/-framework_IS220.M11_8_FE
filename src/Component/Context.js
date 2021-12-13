@@ -50,7 +50,7 @@ export class DataProvider extends Component {
         
         const {products, cart} = this.state;
         const check = cart.every(item=>{
-            if (id === item.id && color === item.color && item.size === size)
+            if (id === item.id && color === item.product_detail_color && item.product_detail_size === size)
                 return false;
             else return true                   
         })
@@ -61,10 +61,11 @@ export class DataProvider extends Component {
             })
             const array = data
             const index = cart.length;
-            const amount = 1;
-            
+            const quantity = 1; 
+            const product_detail_color = color
+            const product_detail_size = size
             this.setState({
-                cart: [...cart, {index, array, id, color, size, amount}]
+                cart: [...cart, {index, array, id, product_detail_color, product_detail_size, quantity}]
             })
                      
             alert("Thêm sản phẩm thành công")
@@ -90,7 +91,7 @@ export class DataProvider extends Component {
         const {cart} = this.state;
         cart.forEach(item=>{
             if (item.index === index)
-                item.amount += 1;
+                item.quantity += 1;
         })
         this.getTotal();
         this.setState({cart: cart})
@@ -100,7 +101,7 @@ export class DataProvider extends Component {
         const {cart} = this.state;
         cart.forEach(item=>{
             if (item.index === index)
-                item.amount === 1 ? item.amount = 1 : item.amount -=1;
+                item.quantity === 1 ? item.quantity = 1 : item.quantity -=1;
         })
         this.getTotal();
         this.setState({cart: cart})
@@ -116,11 +117,11 @@ export class DataProvider extends Component {
         this.setState({cart: cart})
     }
 
-    getMultiplePrice = (id, amount) =>{
+    getMultiplePrice = (id, quantity) =>{
         let str_price = "";
         this.state.products.forEach((item) => {
             if (item.id === id)
-                str_price = (item.product_price*amount).toString()
+                str_price = (item.product_price*quantity).toString()
         })
         if (str_price.length === 7) {
             //Chuõi giá tiền = 7 thì chèn , vô chỗ số 1 và 5
@@ -139,30 +140,38 @@ export class DataProvider extends Component {
 
     getTotal = () =>{
         const {cart} = this.state;
-        let res = 0;
-        cart.forEach((cartitem) => {
-            cartitem.array.forEach(item =>{
-                res = res + (item.product_price * cartitem.amount)
-            })             
-        })    
-        let str_price = res.toString(); 
-        
-        if (str_price.length === 7) {
-            //Chuõi giá tiền = 7 thì chèn , vô chỗ số 1 và 5
-            str_price = str_price.slice(0, 1) + "," + str_price.slice(1)
-            str_price = str_price.slice(0, 5) + "," + str_price.slice(5)
+        if (cart.length == 0) {
+            this.setState({
+                total: 0
+            }) 
         }
-        else  if (str_price.length > 7){
-            //Chuỗi giá tiền > 7 thì chèn , vô chỗ số 1 + i và 5 + i
-            let i = str_price.length - 7
-            str_price = str_price.slice(0, 1+i) + "," + str_price.slice(1+i)
-            str_price = str_price.slice(0, 5+i) + "," + str_price.slice(5+i)
-        } 
+        else {
+            let res = 0;
+            cart.forEach((cartitem) => {
+                cartitem.array.forEach(item =>{
+                    res = res + (item.product_price * cartitem.quantity)
+                })             
+            })    
+            let str_price = res.toString(); 
+            
+            if (str_price.length === 7) {
+                //Chuõi giá tiền = 7 thì chèn , vô chỗ số 1 và 5
+                str_price = str_price.slice(0, 1) + "," + str_price.slice(1)
+                str_price = str_price.slice(0, 5) + "," + str_price.slice(5)
+            }
+            else  if (str_price.length > 7){
+                //Chuỗi giá tiền > 7 thì chèn , vô chỗ số 1 + i và 5 + i
+                let i = str_price.length - 7
+                str_price = str_price.slice(0, 1+i) + "," + str_price.slice(1+i)
+                str_price = str_price.slice(0, 5+i) + "," + str_price.slice(5+i)
+            } 
+            
+            
+            this.setState({
+                total: str_price
+            }) 
+        }
         
-        
-        this.setState({
-            total: str_price
-        }) 
     }
     Login = (username, password) => {
         const { clients} = this.state
@@ -182,13 +191,36 @@ export class DataProvider extends Component {
         })
         
     }
+    ClearCart = () =>{
+        const { cart} = this.state
+        this.setState({
+            cart : []
+        })
+    }
 
-    
+    getNamebyID = (id) => {
+        let name = ''
+        this.state.products.forEach((item) => {
+            if (item.id === id)
+                name = item.product_name
+        })
+        return name
+    }
+
+    getImgbyID = (id) => {
+        let url = ''
+        this.state.products.forEach((item) => {
+            if (item.id === id)
+                url = item.imageURL
+        })
+        return url
+    }
+ 
     render() {
         const {products, cart, account, clients, total, order_history} = this.state;
-        const {addtoCart, getPrice, increase, decrease, remove, getMultiplePrice, getTotal ,Login, Logout, addCart_toOrder} = this;
+        const {addtoCart, getPrice, increase, decrease, remove, getMultiplePrice, getTotal ,Login, Logout, ClearCart, getNamebyID, getImgbyID} = this;
         return (
-            <DataContext.Provider value={{products,cart,account, clients, total, order_history, addtoCart, getPrice,increase, decrease, remove, getMultiplePrice, getTotal,Login, Logout, addCart_toOrder} }>
+            <DataContext.Provider value={{products,cart,account, clients, total, order_history, addtoCart, getPrice,increase, decrease, remove, getMultiplePrice, getTotal,Login, Logout, ClearCart, getNamebyID, getImgbyID} }>
                 {this.props.children}
             </DataContext.Provider>
         );

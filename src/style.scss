@@ -1514,24 +1514,33 @@ header {
             family: $main-font
         }
     }
-    .order-details{
-        width: 100%;
+    .main-container{
+        width: 60%;
         height: 100%;
-        box-shadow: 0 0.1rem 0.25rem grey;
-        display: flex;
-        justify-content: space-between;
-        .order-products{
+        margin: 0 auto;
+        .order-details{
+            margin-top: 50px;
             width: 100%;
+            height: 100%;
+            box-shadow: 0 0.1rem 0.25rem grey;
             .order_id{
                 margin: 0;
-                margin-top: 10px;
+                padding-top: 20px;
             }
+            .order_total{
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+        .order-products{
+            width: 100%;
+            
             .cartItem_mainContainer {
                 padding-top: 20px;
                 padding-bottom: 20px;
                 width: 100%;
                 display: flex;
-                
+                justify-content: center;
                 .img-main {
                     img {
                         margin-left: 30px;
@@ -1580,6 +1589,7 @@ header {
                     
                 }
             }
-        }       
+        } 
     }
+    
 }

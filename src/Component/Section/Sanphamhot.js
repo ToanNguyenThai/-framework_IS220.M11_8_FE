@@ -9,7 +9,6 @@ class Sanphamhot extends Component {
     render() {
 
         const { products } = this.context;
-        console.log(products);
         return (
             <div className="hotItem">
                 <div className="title-area grid">

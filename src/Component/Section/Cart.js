@@ -15,22 +15,20 @@ class Cart extends Component {
         
     }
 
-    sendCart = () =>{
+    sendCart = async() =>{
         
-        var UserID = 0;
-        for (let i = 0; i < this.context.account.data.length; i++)
-            UserID = this.context.account.data[i].id
-        
-        axios({
+        console.log(this.context.account.data[0]);
+        console.log(this.context.cart);
+        await  axios({
             method: 'POST',
-            url: 'http://localhost:3000/cart',
+            url: 'https://localhost:44328/api/Orders/CreateOrder2',
             data: {
-                order: this.context.cart,
-                clientID: UserID
+                customer: this.context.account.data[0],         
+                list_cart: this.context.cart
             }
-        });
-
-        alert("Đặt hàng thành công !")
+        }); 
+         alert("Đặt hàng thành công !")
+        this.context.ClearCart()
         
         
     }
@@ -67,12 +65,12 @@ class Cart extends Component {
                                                 <div className="information">
                                                     <h3 className="name">{cartItem.product_name}</h3>
                                                     <div className="separate"></div>
-                                                    <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.amount)}đ</h2>
-                                                    <h3 className="color">Màu sắc: {item.color}</h3>
-                                                    <h3 className="size">Kích cỡ: {item.size}</h3>
+                                                    <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.quantity)}đ</h2>
+                                                    <h3 className="color">Màu sắc: {item.product_detail_color}</h3>
+                                                    <h3 className="size">Kích cỡ: {item.product_detail_size}</h3>
                                                     <div className="amount">
                                                         <button className="count" onClick={() => this.context.decrease(index)}>-</button>
-                                                        <span> {item.amount} </span>
+                                                        <span> {item.quantity} </span>
                                                         <button className="count" onClick={() => this.context.increase(index)}>+</button>
                                                     </div>
                                                     <button className="delete" onClick={() => this.context.remove(index)}>Xoá sản phẩm</button>
@@ -114,12 +112,12 @@ class Cart extends Component {
                                                 <div className="information">
                                                     <h3 className="name">{cartItem.product_name}</h3>
                                                     <div className="separate"></div>
-                                                    <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.amount)}đ</h2>
-                                                    <h3 className="color">Màu sắc: {item.color}</h3>
-                                                    <h3 className="size">Kích cỡ: {item.size}</h3>
+                                                    <h2 className="price">{this.context.getMultiplePrice(cartItem.id, item.quantity)}đ</h2>
+                                                    <h3 className="color">Màu sắc: {item.product_detail_color}</h3>
+                                                    <h3 className="size">Kích cỡ: {item.product_detail_size}</h3>
                                                     <div className="amount">
                                                         <button className="count" onClick={() => this.context.decrease(index)}>-</button>
-                                                        <span> {item.amount} </span>
+                                                        <span> {item.quantity} </span>
                                                         <button className="count" onClick={() => this.context.increase(index)}>+</button>
                                                     </div>
                                                     <button className="delete" onClick={() => this.context.remove(index)}>Xoá sản phẩm</button>
