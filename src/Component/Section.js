@@ -8,9 +8,6 @@ import Gioithieu from './Section/Gioithieu';
 import Sanpham_chiTiet from './Section/Sanpham_chiTiet';
 import Cart from './Section/Cart';
 import Order_History from './Section/Order_History';
-
-
-
 class Section extends Component {
     render() {
         return (
