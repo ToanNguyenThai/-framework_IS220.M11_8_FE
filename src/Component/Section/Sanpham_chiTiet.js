@@ -49,6 +49,8 @@ class Sanpham_chiTiet extends Component {
     }
     chooseColor = (key) => {
         var optionColor = document.getElementsByClassName("color_options");
+        
+       
             for (var i = 0; i < optionColor.length; i++) {
                 optionColor[i].style.borderColor = "red";
                 optionColor[i].style.borderWidth = "1px";
@@ -61,7 +63,7 @@ class Sanpham_chiTiet extends Component {
 
                 }
             }
-        
+            
     }
 
     chooseSize = (key) => {
@@ -135,7 +137,7 @@ class Sanpham_chiTiet extends Component {
                                             <div className="addtoCart_action">THÊM VÀO GIỎ</div>
                                         </div>
 
-                                        <Link to="/Cart">
+                                        <Link onClick={() => this.context.addtoCart(item.id, this.state.color, this.state.size)} to="/Cart">
                                             <div className="buyNow">
                                                 <div className="check">
                                                     <i class="fas fa-check"></i>

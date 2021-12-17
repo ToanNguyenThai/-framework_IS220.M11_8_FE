@@ -54,7 +54,7 @@ export class DataProvider extends Component {
                 return false;
             else return true                   
         })
-        
+             
         if (check) {
             const data = products.filter(item=>{
                 return item.id === id
