@@ -1346,10 +1346,12 @@ header {
     }
 
     .signUp-container {
-        padding-top: 20px;
+        margin-top: 50px;
         position: absolute;
         width: 400px;
-        height: 600px;
+        height: 90%;
+        padding-top: 20px;
+
         border-radius: 40px;
         top: 40%;
         left: 50%;
@@ -1375,7 +1377,7 @@ header {
             width: 300px;
             height: 40px;
             margin: 0 auto;
-            margin-top: 20px;
+            margin-top: 35px;
             position: relative;
             background-color: #eeeeee;
             border-radius: 10px;
@@ -1397,7 +1399,17 @@ header {
                 top: 50%;
                 transform: translateY(-50%);
             }
+            .error{
+                padding-top: 45px;
+                padding-left: 20px;
+                font: {
+                    family: $main-font;
+                    size: 14px;
+                }
+                color: red;
+            }
         }
+        
         .btn-area {
             display: flex;
             justify-content: center;

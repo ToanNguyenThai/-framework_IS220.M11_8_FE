@@ -1542,10 +1542,11 @@ header .main-container .operation .cart_number {
 }
 
 .overlay-container .signUp-container {
-  padding-top: 20px;
+  margin-top: 50px;
   position: absolute;
   width: 400px;
-  height: 600px;
+  height: 90%;
+  padding-top: 20px;
   border-radius: 40px;
   top: 40%;
   left: 50%;
@@ -1573,7 +1574,7 @@ header .main-container .operation .cart_number {
   width: 300px;
   height: 40px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 35px;
   position: relative;
   background-color: #eeeeee;
   border-radius: 10px;
@@ -1610,6 +1611,20 @@ header .main-container .operation .cart_number {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.overlay-container .signUp-container .name .error,
+.overlay-container .signUp-container .password .error,
+.overlay-container .signUp-container .email .error,
+.overlay-container .signUp-container .phoneNumber .error,
+.overlay-container .signUp-container .address .error,
+.overlay-container .signUp-container .signup-password .error,
+.overlay-container .signUp-container .signup-passwordConfirm .error {
+  padding-top: 45px;
+  padding-left: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: red;
 }
 
 .overlay-container .signUp-container .btn-area {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Validator from './Form_Validation'
+
 import { AccountContext } from '../Context'
 
 class SignUp extends Component {
@@ -13,14 +13,26 @@ class SignUp extends Component {
         address: '',
         password: '',
         re_password: '',
+        clients: []
 
+    }
+    componentDidMount() {
+        axios({
+            method: 'GET',
+            url: 'https://localhost:44328/api/Customers/GetAll',
+            data: null
+        }).then(res => {
+            this.setState({
+                clients: res.data
+            })
+        })
     }
     setName = (val) => {
         this.setState({
             name: val.target.value
         })
     }
-    
+
     setEmail = (val) => {
         this.setState({
             email: val.target.value
@@ -38,6 +50,7 @@ class SignUp extends Component {
 
     }
     setPassword = (val) => {
+
         this.setState({
             password: val.target.value
         })
@@ -49,7 +62,7 @@ class SignUp extends Component {
     }
 
     handleSignUp = event => {
-        
+
         axios({
             method: 'POST',
             url: 'https://localhost:44328/api/Customers',
@@ -69,8 +82,85 @@ class SignUp extends Component {
 
     }
 
-    render() {
+    checkName = (val) => {
+        if (val.target.value.length == 0)
+            document.querySelector("#error_name").innerText = "Vui lòng nhập tên"
+        else if (val.target.value.length > 0)
+            document.querySelector("#error_name").innerText = ""
         
+    }
+
+    checkAddress= (val) => {
+        if (val.target.value.length == 0)
+            document.querySelector("#error_address").innerText = "Vui lòng nhập tên"
+        else if (val.target.value.length > 0)
+            document.querySelector("#error_address").innerText = ""
+        
+    }
+
+    checkEmail = (val) => {
+        let count = 0;
+        if (val.target.value.length == 0)
+            document.querySelector("#error_email").innerText = "Vui lòng nhập email"
+        else if (val.target.value.includes("@") === false)
+            document.querySelector("#error_email").innerText = "Email không hợp lệ"
+        else if (val.target.value.includes("@") === true) {
+            this.state.clients.forEach(element => {
+                if (val.target.value === element.customer_email)
+                    count++
+            });
+            if (count !== 0)
+                document.querySelector("#error_email").innerText = "Email đã tồn tại"
+            else document.querySelector("#error_email").innerText = ""
+        }
+
+    }
+
+    checkPhone= (val) => {
+        let count = 0;
+        if (val.target.value.length == 0)
+            document.querySelector("#error_phone").innerText = "Vui lòng nhập số điện thoại"
+        else if (val.target.value.length < 10 || val.target.value.length > 10)
+            document.querySelector("#error_phone").innerText = "Số điện thoại không hợp lệ"
+        else if (val.target.value.length === 10) {
+            this.state.clients.forEach(element => {
+                if (val.target.value === element.customer_phoneNumber)
+                    count++
+            });
+            if (count !== 0)
+                document.querySelector("#error_phone").innerText = "Số điện thoại đã tồn tại"
+            else document.querySelector("#error_phone").innerText = ""
+        }
+
+    }
+
+    checkPassword = (val) => {
+        if (val.target.value.length == 0)
+            document.querySelector("#error_password").innerText = "Vui lòng nhập mật khẩu"
+        else if (val.target.value.length <= 5 && val.target.value.length > 0)
+            document.querySelector("#error_password").innerText = "Độ dài mật khẩu lớn hơn 5"
+        else if (val.target.value.length > 5)
+            document.querySelector("#error_password").innerText = ""
+    }
+    checkRePassword = (val) => {
+        if (val.target.value !== this.state.password)
+            document.querySelector("#error_repassword").innerText = "Mật khẩu không khớp"
+        else document.querySelector("#error_repassword").innerText = ""
+    }
+
+    componentDidUpdate(){
+        var errorList = document.getElementsByClassName("error");
+        console.log(errorList);
+        var count = 0;
+        for ( let i = 0; i< errorList.length; i++){
+            if (errorList[i].innerText !== "")
+                count++;
+        }
+        
+        console.log(count);
+    }
+    render() {
+
         const { switchToSignIn } = this.context
 
         return (
@@ -79,34 +169,39 @@ class SignUp extends Component {
                     <h2>Đăng Ký</h2>
                     <div className="name">
                         <i class="fas fa-user"></i>
-                        <input onChange={this.setName} type="text" name id="name" placeholder="Họ và tên" />
-                        <h3 className="message error"></h3>
+                        <input onChange={this.setName} onBlur={this.checkName}  type="text" name id="name" placeholder="Họ và tên" />
+                        <h3 className='error' id="error_name"></h3>
                     </div>
 
                     <div className="email">
                         <i class="fas fa-envelope"></i>
-                        <input onChange={this.setEmail} type="text" name id="email" placeholder="Email" />
+                        <input onChange={this.setEmail} onBlur={this.checkEmail} type="text" name id="email" placeholder="Email" />
+                        <h3 className='error' id="error_email"></h3>
                     </div>
                     <div className="phoneNumber">
                         <i class="fas fa-phone"></i>
-                        <input onChange={this.setPhone} type="text" name id="phoneNumber" placeholder="Số điện thoại" />
+                        <input onChange={this.setPhone} onBlur={this.checkPhone} type="text" name id="phoneNumber" placeholder="Số điện thoại" />
+                        <h3 className='error' id="error_phone"></h3>
                     </div>
 
                     <div className="address">
                         <i class="fas fa-home"></i>
-                        <input onChange={this.setAddress} type="text" name id="address" placeholder="Địa chỉ" />
+                        <input onChange={this.setAddress} onBlur={this.checkAddress} type="text" name id="address" placeholder="Địa chỉ" />
+                        <h3 className='error' id="error_address"></h3>
                     </div>
 
                     <div className="signup-password">
                         <i class="fas fa-unlock-alt"></i>
-                        <input onChange={this.setPassword} type="password" name id="signupPassword" placeholder="Mật khẩu" />
+                        <input onChange={this.setPassword} onBlur={this.checkPassword} type="password" name id="signupPassword" placeholder="Mật khẩu" />
+                        <h3 className='error' id="error_password"></h3>
                     </div>
                     <div className="signup-passwordConfirm">
                         <i class="fas fa-unlock-alt"></i>
-                        <input onChange={this.setRePassword} type="password" name id="signupPassword" placeholder="Nhập lại mật khẩu" />
+                        <input onChange={this.setRePassword} onBlur={this.checkRePassword} type="password" name id="signup_rePassword" placeholder="Nhập lại mật khẩu" />
+                        <h3 className='error' id="error_repassword"></h3>
                     </div>
                     <div className="btn-area">
-                        <button id="btn-signUp" type="submit"  >Đăng Ký </button>
+                        <button id="btn-signUp" type="submit">Đăng Ký </button>
                     </div>
 
                     <div className="optional">
