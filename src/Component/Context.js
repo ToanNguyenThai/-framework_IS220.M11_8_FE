@@ -49,30 +49,39 @@ export class DataProvider extends Component {
     addtoCart = (id, color, size) =>{
         
         const {products, cart} = this.state;
-        const check = cart.every(item=>{
-            if (id === item.id && color === item.product_detail_color && item.product_detail_size === size)
-                return false;
-            else return true                   
-        })
-             
-        if (check) {
-            const data = products.filter(item=>{
-                return item.id === id
+        if (color.length === 0 && size.length === 0 )
+            alert("Vui lòng chọn màu và size")
+        else if (color.length === 0)
+            alert("Vui lòng chọn màu")
+        else if (size.length === 0)
+            alert("Vui lòng chọn size")
+        else if (color.length !== 0 && size.length !== 0) {
+            const check = cart.every(item=>{
+                if (id === item.id && color === item.product_detail_color && item.product_detail_size === size)
+                    return false;
+                else return true                   
             })
-            const array = data
-            const index = cart.length;
-            const quantity = 1; 
-            const product_detail_color = color
-            const product_detail_size = size
-            this.setState({
-                cart: [...cart, {index, array, id, product_detail_color, product_detail_size, quantity}]
-            })
-                     
-            alert("Thêm sản phẩm thành công")
-
-            console.log(cart);
+                 
+            if (check) {
+                const data = products.filter(item=>{
+                    return item.id === id
+                })
+                const array = data
+                const index = cart.length;
+                const quantity = 1; 
+                const product_detail_color = color
+                const product_detail_size = size
+                this.setState({
+                    cart: [...cart, {index, array, id, product_detail_color, product_detail_size, quantity}]
+                })
+                         
+                alert("Thêm sản phẩm thành công")
+    
+                console.log(cart);
+            }
+            else alert("Sản phẩm đã tồn tại trong giỏ hàng")
         }
-        else alert("Sản phẩm đã tồn tại trong giỏ hàng")
+        
     }
 
     getPrice = (id) => {
