@@ -1399,7 +1399,7 @@ header {
                 top: 50%;
                 transform: translateY(-50%);
             }
-            .error{
+            .error {
                 padding-top: 45px;
                 padding-left: 20px;
                 font: {
@@ -1409,7 +1409,7 @@ header {
                 color: red;
             }
         }
-        
+
         .btn-area {
             display: flex;
             justify-content: center;
@@ -1518,15 +1518,45 @@ header {
     margin-top: 30px;
     width: 100%;
     height: 100%;
-    
-    h3{
+
+    h3 {
         text-align: center;
         font: {
             size: 25px;
-            family: $main-font
+            family: $main-font;
         }
     }
-    .main-container{
+    table {
+        margin: 0 auto;
+        font-family: $main-font;
+        text-align: left;
+        margin-top: 50px;
+        th {
+            padding: 10px;
+            padding-left: 50px;
+            font-size: 17px;
+            a {
+                text-decoration: none;
+                color: black;
+                transition: all 0.4s;
+                font-style: italic;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+        .title {
+            th {
+                color: $main-color;
+                font: {
+                    size: 20px;
+                    weight: 700;
+                }
+                text-transform: uppercase;
+            }
+        }
+    }
+    /*  .main-container{
         width: 60%;
         height: 100%;
         margin: 0 auto;
@@ -1602,6 +1632,96 @@ header {
                 }
             }
         } 
+    } */
+}
+
+.orderDetails-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+
+    h3 {
+        text-align: center;
+        font: {
+            size: 25px;
+            family: $main-font;
+        }
     }
-    
+
+    .main-container {
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+        .order-details {
+            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0.1rem 0.25rem grey;
+            .order_id {
+                margin: 0;
+                padding-top: 20px;
+            }
+            .order_total {
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+        .order-products {
+            width: 100%;
+
+            .cartItem_mainContainer {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .img-main {
+                    img {
+                        margin-left: 30px;
+                        width: 262.5px;
+                        height: 262.5px;
+                    }
+                }
+                .information {
+                    margin-left: 50px;
+                    margin-top: 20px;
+                    a {
+                        text-decoration: none;
+                    }
+                    height: 100%;
+                    width: 360px;
+                    .name,
+                    .price,
+                    .color,
+                    .size,
+                    .amount {
+                        margin: 0;
+                        font-family: $main-font;
+                        text-align: left;
+                    }
+                    .color,
+                    .size {
+                        padding-top: 10px;
+                        font-size: 15px;
+                    }
+                    .name {
+                        font-size: 23px;
+                    }
+                    .separate {
+                        margin-top: 20px;
+                        width: 300px;
+                        height: 2px;
+                        background-color: $main-color;
+                    }
+                    .price {
+                        margin-top: 15px;
+                        color: #b2008d;
+                    }
+                    .amount {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

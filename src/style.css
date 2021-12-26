@@ -1743,6 +1743,83 @@ header .main-container .operation .cart_number {
   margin-top: 30px;
   width: 100%;
   height: 100%;
+  /*  .main-container{
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+        .order-details{
+            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0.1rem 0.25rem grey;
+            .order_id{
+                margin: 0;
+                padding-top: 20px;
+            }
+            .order_total{
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+        .order-products{
+            width: 100%;
+            
+            .cartItem_mainContainer {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .img-main {
+                    img {
+                        margin-left: 30px;
+                        width: 262.5px;
+                        height: 262.5px;
+                    }
+                }
+                .information {
+                    margin-left: 50px;
+                    margin-top: 20px;
+                    a {
+                        text-decoration: none;
+                    }
+                    height: 100%;
+                    width: 360px;
+                    .name,
+                    .price,
+                    .color,
+                    .size, .amount {
+                        margin: 0;
+                        font-family: $main-font;
+                        text-align: left;
+                    }
+                    .color,
+                    .size {
+                        padding-top: 10px;
+                        font-size: 15px;
+                    }
+                    .name {
+                        font-size: 23px;
+                        
+                    }
+                    .separate {
+                        margin-top: 20px;
+                        width: 300px;
+                        height: 2px;
+                        background-color: $main-color;
+                    }
+                    .price {
+                        margin-top: 15px;
+                        color: #b2008d;
+                    }
+                    .amount {
+                        margin-top: 20px;                        
+                    }
+                    
+                }
+            }
+        } 
+    } */
 }
 
 .order-container h3 {
@@ -1751,13 +1828,57 @@ header .main-container .operation .cart_number {
   font-family: "Open Sans", sans-serif;
 }
 
-.order-container .main-container {
+.order-container table {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.order-container table th {
+  padding: 10px;
+  padding-left: 50px;
+  font-size: 17px;
+}
+
+.order-container table th a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-style: italic;
+}
+
+.order-container table th a:hover {
+  color: #58b3f0;
+}
+
+.order-container table .title th {
+  color: #58b3f0;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.orderDetails-container {
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.orderDetails-container h3 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.orderDetails-container .main-container {
   width: 60%;
   height: 100%;
   margin: 0 auto;
 }
 
-.order-container .main-container .order-details {
+.orderDetails-container .main-container .order-details {
   margin-top: 50px;
   width: 100%;
   height: 100%;
@@ -1765,21 +1886,21 @@ header .main-container .operation .cart_number {
           box-shadow: 0 0.1rem 0.25rem grey;
 }
 
-.order-container .main-container .order-details .order_id {
+.orderDetails-container .main-container .order-details .order_id {
   margin: 0;
   padding-top: 20px;
 }
 
-.order-container .main-container .order-details .order_total {
+.orderDetails-container .main-container .order-details .order_total {
   margin: 0;
   padding-bottom: 20px;
 }
 
-.order-container .main-container .order-products {
+.orderDetails-container .main-container .order-products {
   width: 100%;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer {
   padding-top: 20px;
   padding-bottom: 20px;
   width: 100%;
@@ -1791,55 +1912,56 @@ header .main-container .operation .cart_number {
           justify-content: center;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .img-main img {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .img-main img {
   margin-left: 30px;
   width: 262.5px;
   height: 262.5px;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information {
   margin-left: 50px;
   margin-top: 20px;
   height: 100%;
   width: 360px;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information a {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information a {
   text-decoration: none;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .name,
-.order-container .main-container .order-products .cartItem_mainContainer .information .price,
-.order-container .main-container .order-products .cartItem_mainContainer .information .color,
-.order-container .main-container .order-products .cartItem_mainContainer .information .size, .order-container .main-container .order-products .cartItem_mainContainer .information .amount {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .name,
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .price,
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .color,
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .size,
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .amount {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   text-align: left;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .color,
-.order-container .main-container .order-products .cartItem_mainContainer .information .size {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .color,
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .size {
   padding-top: 10px;
   font-size: 15px;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .name {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .name {
   font-size: 23px;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .separate {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .separate {
   margin-top: 20px;
   width: 300px;
   height: 2px;
   background-color: #58b3f0;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .price {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .price {
   margin-top: 15px;
   color: #b2008d;
 }
 
-.order-container .main-container .order-products .cartItem_mainContainer .information .amount {
+.orderDetails-container .main-container .order-products .cartItem_mainContainer .information .amount {
   margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,7 +3,7 @@ import Header from '../Header';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 import { DataContext } from '../Context'
 
 class Order_History extends Component {
@@ -26,52 +26,47 @@ class Order_History extends Component {
         })
 
     }
+
+    getOrderDate = (id) => {
+        var date;
+        this.state.orders.forEach(item => {
+            if (id === item.id)
+                date = item.order_date;
+        })
+        return date.substring(0, 10)
+    }
     render() {
 
         const { orders } = this.state
+        console.log(orders);
         return (
             <div>
                 <Header></Header>
                 <Navigation></Navigation>
                 <div className="order-container grid">
                     <h3>ĐƠN HÀNG ĐÃ ĐẶT</h3>
-                    <div className="main-container">
+                    <table>
+                        <tr className='title'>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
                         {
                             orders.map(order_item => (
-                                <div className="order-details">
-                                    <h3 className="order_id">{order_item.id}</h3>
-                                    <div className="order-products">
-                                        {
-                                            order_item.list_cart.map(item => (
-                                                <div>
-                                                    
-                                                    <div className="cartItem_mainContainer" key={order_item.id}>
-
-                                                        <div className="img-main">
-                                                            <img src={this.context.getImgbyID(item.id)}></img>
-                                                        </div>
-                                                        <div className="information">
-                                                            <h3 className="name">{this.context.getNamebyID(item.id)}</h3>
-                                                            <div className="separate"></div>
-                                                            <h2 className="price">{this.context.getMultiplePrice(item.id, item.quantity)}đ</h2>
-                                                            <h3 className="color">Màu sắc: {item.product_detail_color}</h3>
-                                                            <h3 className="size">Kích cỡ: {item.product_detail_size}</h3>
-                                                            <div className="amount">
-                                                                <span> Số lượng: {item.quantity} </span>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            ))
-                                        }
-                                    </div>
-                                    <h3 className="order_total">Tổng tiền: {order_item.order_total}</h3>
-                                </div>
+                                <tr>
+                                    <th>
+                                        <Link to={`/OrderDetails_History/${order_item.id}`}>
+                                            {order_item.id}
+                                        </Link>
+                                    </th>
+                                    <th> {this.getOrderDate(order_item.id)} </th>
+                                    <th>{order_item.order_total}</th>
+                                </tr>
                             ))
                         }
-                    </div>
+
+                    </table>
+
                 </div>
                 <Footer></Footer>
             </div>
