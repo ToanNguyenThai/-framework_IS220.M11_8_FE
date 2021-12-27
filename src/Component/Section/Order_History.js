@@ -50,6 +50,7 @@ class Order_History extends Component {
                             <th>Mã đơn hàng</th>
                             <th>Ngày đặt hàng</th>
                             <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
                         </tr>
                         {
                             orders.map(order_item => (
@@ -61,6 +62,7 @@ class Order_History extends Component {
                                     </th>
                                     <th> {this.getOrderDate(order_item.id)} </th>
                                     <th>{order_item.order_total}</th>
+                                    <th>{order_item.order_status}</th>
                                 </tr>
                             ))
                         }

@@ -1884,6 +1884,7 @@ header .main-container .operation .cart_number {
   height: 100%;
   -webkit-box-shadow: 0 0.1rem 0.25rem grey;
           box-shadow: 0 0.1rem 0.25rem grey;
+  padding-left: 20px;
 }
 
 .orderDetails-container .main-container .order-details .order_id {
