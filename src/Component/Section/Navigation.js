@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../icon/css/all.min.css';
 import { Link } from 'react-router-dom';
 class Navigation extends Component {
-  
+
     render() {
         return (
             <div className="navigation">
@@ -14,7 +14,7 @@ class Navigation extends Component {
 
                     </li>
                     <li className="item">
-                        <Link to={"./Gioithieu"}>
+                        <Link to={"/Gioithieu"}>
                             <a >GIỚI THIỆU</a>
                         </Link>
 

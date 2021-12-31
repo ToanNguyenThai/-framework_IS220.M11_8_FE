@@ -1429,6 +1429,14 @@ header .main-container .operation .cart_number {
   font-size: 15px;
 }
 
+.cartContainer .Payment .btn-paymnet-area .btn-payment:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #58b3f0;
+  background-color: #fff;
+  color: #58b3f0;
+}
+
 .overlay-container {
   position: fixed;
   top: 65px;
@@ -1518,6 +1526,14 @@ header .main-container .operation .cart_number {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 15px;
+}
+
+.overlay-container .signIn-container .btn-area button:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #58b3f0;
+  background-color: #fff;
+  color: #58b3f0;
 }
 
 .overlay-container .signIn-container #error-area {
@@ -1655,6 +1671,14 @@ header .main-container .operation .cart_number {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 15px;
+}
+
+.overlay-container .signUp-container .btn-area button:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #58b3f0;
+  background-color: #fff;
+  color: #58b3f0;
 }
 
 .overlay-container .signUp-container #error-area {
@@ -1973,5 +1997,9 @@ header .main-container .operation .cart_number {
 
 .orderDetails-container .main-container .order-products .cartItem_mainContainer .information .amount {
   margin-top: 20px;
+}
+
+.orderDetails-container .main-container .order_total {
+  color: #b2008d;
 }
 /*# sourceMappingURL=style.css.map */

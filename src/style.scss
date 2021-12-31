@@ -1238,6 +1238,15 @@ header {
                     weight: 600;
                     size: 15px;
                 }
+                &:active {
+                    border: {
+                        style: solid;
+                        width: 2px;
+                        color: $main-color;
+                    }
+                    background-color: #fff;
+                    color: $main-color;
+                }
             }
         }
     }
@@ -1318,6 +1327,15 @@ header {
                     family: $main-font;
                     weight: 600;
                     size: 15px;
+                }
+                &:active {
+                    border: {
+                        style: solid;
+                        width: 2px;
+                        color: $main-color;
+                    }
+                    background-color: #fff;
+                    color: $main-color;
                 }
             }
         }
@@ -1431,6 +1449,15 @@ header {
                     family: $main-font;
                     weight: 600;
                     size: 15px;
+                }
+                &:active {
+                    border: {
+                        style: solid;
+                        width: 2px;
+                        color: $main-color;
+                    }
+                    background-color: #fff;
+                    color: $main-color;
                 }
             }
         }
@@ -1731,6 +1758,9 @@ header {
                     }
                 }
             }
+        }
+        .order_total {
+            color: #b2008d;
         }
     }
 }

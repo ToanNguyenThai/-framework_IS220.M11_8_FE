@@ -28,18 +28,31 @@ class OrderDetails_History extends Component {
 
     }
 
-    /*  getOrderDate = (id) => {
-         var date;
-         this.state.orders.forEach(item => {
-             if (id === item.id)
-                 date = item.order_date;
-         })
-         return date.substring(0, 10)
-     } */
+    getOrderTotal = (id) => {
+        var total = 0;
+
+        if (id === this.state.orders.id)
+            total = this.state.orders.order_total;
+
+        let str_price = total + "";
+
+        if (str_price.length === 7) {
+            //Chuõi giá tiền = 7 thì chèn , vô chỗ số 1 và 5
+            str_price = str_price.slice(0, 1) + "," + str_price.slice(1)
+            str_price = str_price.slice(0, 5) + "," + str_price.slice(5)
+        }
+        else if (str_price.length > 7) {
+            //Chuỗi giá tiền > 7 thì chèn , vô chỗ số 1 + i và 5 + i
+            let i = str_price.length - 7
+            str_price = str_price.slice(0, 1 + i) + "," + str_price.slice(1 + i)
+            str_price = str_price.slice(0, 5 + i) + "," + str_price.slice(5 + i)
+        }
+        return str_price
+    }
     render() {
 
         const { orders, listCart } = this.state
-        console.log(listCart);
+        console.log(orders);
         return (
             <div>
                 <Header></Header>
@@ -78,7 +91,7 @@ class OrderDetails_History extends Component {
                                     ))
                                 }
                             </div>
-                            <h3 className="order_total">Tổng tiền: {orders.order_total}</h3>
+                            <h3 className="order_total">Tổng tiền: {this.getOrderTotal(orders.id)} đ</h3>
 
                         </div>
 
