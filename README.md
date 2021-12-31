@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+NỘI DUNG ĐỒ ÁN: 
+Tên đề tài: Cửa hàng giày thể thao 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Công nghệ sử dụng: 
++ Front-end:  HTML, CSS, JavaScript, ReactJS, SCSS, ReChartJS, Axios.
++ Back-end:    C#, .Net API, Firebase 
+- Chức năng chính: 
+  + Trang khách hàng :  
+    Tìm kiếm sản phẩm theo tên, danh mục.
+    Đăng nhập, đăng ký - form validation khi đăng nhập, đăng ký. 
+    Mua hàng. 
+    Kiểm tra lịch sử đặt hàng. 
+    Gửi email khi khách đặt hàng 
+  + Trang admin: 
+    Thống kê, biểu đồ. 
+    Quản lý sản phẩm, người dùng, hoá đơn. 
+    Phân quyền admin, user. 
 
-## Available Scripts
+GIỚI THIỆU THÀNH VIÊN NHÓM
 
-In the project directory, you can run:
+- Nhóm trưởng: 
+MSSV: 19522366
+Họ tên: Nguyễn Thái Toàn
+Số điện thoại: 0934 189 092
+Facebook: fb.com/gaubacuc56.
+Nhiệm vụ: Thiết kế Front-end.
+Phần trăm hoàn thành: 100%.
 
-### `npm start`
+- Thành viên:
+MSSV:19522434 
+Họ tên:Phạm Đắc Trung.
+Nhiệm vụ: Thiết kế Back-end.
+Phần trăm hoàn thành: 100%.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+------------------------------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+MSSV:19520072 
+Họ tên:Lê Kim Hằng.
+Nhiệm vụ: Thiết kế Back-end + CSDL.
+Phần trăm hoàn thành: 100%.
 
-### `npm test`
+------------------------------
+MSSV: 19520747 
+Họ tên: Nguyễn Lê Na
+Nhiệm vụ: Thiết kế Front-end + CSDL.
+Phần trăm hoàn thành: 100%.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+CÀI ĐẶT CHƯƠNG TRÌNH WEB
+- Back-end:
+ 1. Mở Visual Studio 2020, chọn Clone a repository
+ 2. Tại Browse a repository, chọn Github.
+ 3. Paste đường dẫn "https://github.com/ToanNguyenThai/framework_IS220.M11_8_BE" vào thanh tìm kiếm, chọn Clone.
+ 4. Double-click vào file RossyStore.BE.sln tại thanh Solution Explore bên phải màn hình.
+ 5. Ctrl+F5 để chạy server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Front-end ( Trang chủ và Dashboard đều cài đặt giống nhau )
+ 1. Tải 2 file framework_IS220.M11_8_FE và framework_IS220.M11_8_FE_Dashboard
+ 2. Mở bằng Visual Studio Code.
+ 3. Vào terminal, kiểm tra đường dẫn đã trỏ vào file my-app chưa. Nếu chưa thì gõ lệnh: cd my-app.
+ 4. Cài đặt react script bằng lệnh: npm install react-scripts --save.
+ 5. Chạy giao diện bằng lệnh : npm start.
+  Lưu ý: để dùng lệnh npm, máy tính phải được cài đặt NodeJS trước.
