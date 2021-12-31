@@ -13,7 +13,8 @@ class SignUp extends Component {
         address: '',
         password: '',
         re_password: '',
-        clients: []
+        clients: [],
+        countError: 0
 
     }
     componentDidMount() {
@@ -61,41 +62,22 @@ class SignUp extends Component {
         })
     }
 
-    handleSignUp = event => {
 
-        axios({
-            method: 'POST',
-            url: 'https://localhost:44328/api/Customers',
-            data: {
-                id: "",
-                customer_name: this.state.name,
-                customer_email: this.state.email,
-                customer_phoneNumber: this.state.phone,
-                customer_password: this.state.password,
-                customer_address: this.state.address
-            }
-        });
-        var form = document.querySelector("#signUp-form");
-        form.reset();  // Reset all form data
-        alert("Đăng kí thành công")
-        event.preventDefault();
-
-    }
 
     checkName = (val) => {
         if (val.target.value.length == 0)
             document.querySelector("#error_name").innerText = "Vui lòng nhập tên"
         else if (val.target.value.length > 0)
             document.querySelector("#error_name").innerText = ""
-        
+
     }
 
-    checkAddress= (val) => {
+    checkAddress = (val) => {
         if (val.target.value.length == 0)
-            document.querySelector("#error_address").innerText = "Vui lòng nhập tên"
+            document.querySelector("#error_address").innerText = "Vui lòng nhập địa chỉ"
         else if (val.target.value.length > 0)
             document.querySelector("#error_address").innerText = ""
-        
+
     }
 
     checkEmail = (val) => {
@@ -116,7 +98,7 @@ class SignUp extends Component {
 
     }
 
-    checkPhone= (val) => {
+    checkPhone = (val) => {
         let count = 0;
         if (val.target.value.length == 0)
             document.querySelector("#error_phone").innerText = "Vui lòng nhập số điện thoại"
@@ -148,16 +130,50 @@ class SignUp extends Component {
         else document.querySelector("#error_repassword").innerText = ""
     }
 
-    componentDidUpdate(){
+    getError = () => {
         var errorList = document.getElementsByClassName("error");
-        console.log(errorList);
-        var count = 0;
-        for ( let i = 0; i< errorList.length; i++){
+        var tmp_List = []
+        for (let i = 0; i < errorList.length; i++) {
             if (errorList[i].innerText !== "")
-                count++;
+                tmp_List.push(errorList[i].innerText)
         }
-        
-        console.log(count);
+        this.setState({
+            countError: tmp_List.length
+        })
+    }
+
+    handleSignUp = event => {
+        if (this.state.countError > 0) {
+            alert("Thông tin đăng ký không hợp lệ")
+            event.preventDefault();
+        }
+
+
+        else if (this.state.name.length === 0 || this.state.email.length === 0
+            || this.state.phone.length === 0 || this.state.name.password === 0
+            || this.state.address.length === 0) {
+            alert("Vui lòng nhập đầy đủ thông tin")
+            event.preventDefault();
+        }
+
+        else {
+            axios({
+                method: 'POST',
+                url: 'https://localhost:44328/api/Customers',
+                data: {
+                    id: "",
+                    customer_name: this.state.name,
+                    customer_email: this.state.email,
+                    customer_phoneNumber: this.state.phone,
+                    customer_password: this.state.password,
+                    customer_address: this.state.address
+                }
+            });
+            var form = document.querySelector("#signUp-form");
+            form.reset();  // Reset all form data
+            alert("Đăng kí thành công")
+            event.preventDefault();
+        }
     }
     render() {
 
@@ -165,11 +181,11 @@ class SignUp extends Component {
 
         return (
             <div className="signUp-container">
-                <form id="signUp-form" onSubmit={this.handleSignUp} >
+                <form id="signUp-form" onClick={this.getError} onSubmit={this.handleSignUp} >
                     <h2>Đăng Ký</h2>
                     <div className="name">
                         <i class="fas fa-user"></i>
-                        <input onChange={this.setName} onBlur={this.checkName}  type="text" name id="name" placeholder="Họ và tên" />
+                        <input onChange={this.setName} onBlur={this.checkName} type="text" name id="name" placeholder="Họ và tên" />
                         <h3 className='error' id="error_name"></h3>
                     </div>
 

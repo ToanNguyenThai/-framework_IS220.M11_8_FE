@@ -1545,7 +1545,7 @@ header .main-container .operation .cart_number {
   margin-top: 50px;
   position: absolute;
   width: 400px;
-  height: 90%;
+  height: 84%;
   padding-top: 20px;
   border-radius: 40px;
   top: 40%;
@@ -1627,6 +1627,10 @@ header .main-container .operation .cart_number {
   color: red;
 }
 
+.overlay-container .signUp-container .name {
+  margin-top: 20px;
+}
+
 .overlay-container .signUp-container .btn-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1635,7 +1639,7 @@ header .main-container .operation .cart_number {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .overlay-container .signUp-container .btn-area button {
@@ -1662,7 +1666,7 @@ header .main-container .operation .cart_number {
 }
 
 .overlay-container .signUp-container .optional {
-  margin-top: 40px;
+  margin-top: 20px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
@@ -1858,6 +1862,10 @@ header .main-container .operation .cart_number {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.order-container table tbody th {
+  text-align: center;
 }
 
 .orderDetails-container {

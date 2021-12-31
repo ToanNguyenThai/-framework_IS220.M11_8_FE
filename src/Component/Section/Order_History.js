@@ -46,26 +46,31 @@ class Order_History extends Component {
                 <div className="order-container grid">
                     <h3>ĐƠN HÀNG ĐÃ ĐẶT</h3>
                     <table>
-                        <tr className='title'>
-                            <th>Mã đơn hàng</th>
-                            <th>Ngày đặt hàng</th>
-                            <th>Tổng tiền</th>
-                            <th>Trạng thái</th>
-                        </tr>
-                        {
-                            orders.map(order_item => (
-                                <tr>
-                                    <th>
-                                        <Link to={`/OrderDetails_History/${order_item.id}`}>
-                                            {order_item.id}
-                                        </Link>
-                                    </th>
-                                    <th> {this.getOrderDate(order_item.id)} </th>
-                                    <th>{order_item.order_total}</th>
-                                    <th>{order_item.order_status}</th>
-                                </tr>
-                            ))
-                        }
+                        <thead>
+                            <tr className='title'>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày đặt hàng</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                orders.map(order_item => (
+                                    <tr>
+                                        <th>
+                                            <Link to={`/OrderDetails_History/${order_item.id}`}>
+                                                {order_item.id}
+                                            </Link>
+                                        </th>
+                                        <th> {this.getOrderDate(order_item.id)} </th>
+                                        <th>{order_item.order_total}</th>
+                                        <th>{order_item.order_status}</th>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+
 
                     </table>
 
