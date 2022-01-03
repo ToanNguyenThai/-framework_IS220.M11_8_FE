@@ -18,7 +18,7 @@ export class DataProvider extends Component {
     componentDidMount() {
         axios({
             method: 'GET',
-            url: 'https://localhost:44343/api/Products/GetAll',
+            url: 'https://192.168.1.54:44343/api/Products/GetAll',
             data: null
         }).then(res => {
             this.setState({
