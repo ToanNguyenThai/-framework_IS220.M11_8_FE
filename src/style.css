@@ -1562,7 +1562,6 @@ header .main-container .operation .cart_number {
   margin-top: 50px;
   position: absolute;
   width: 400px;
-  padding-top: 20px;
   border-radius: 40px;
   top: 40%;
   left: 50%;
@@ -1572,9 +1571,9 @@ header .main-container .operation .cart_number {
   background-color: white;
 }
 
-.overlay-container .signUp-container .signUp-form {
-  padding-top: 50px;
-  padding-bottom: 50px;
+.overlay-container .signUp-container #signUp-form {
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .overlay-container .signUp-container h2 {

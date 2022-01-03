@@ -1368,16 +1368,15 @@ header {
         margin-top: 50px;
         position: absolute;
         width: 400px;
-        padding-top: 20px;
         border-radius: 40px;
         top: 40%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         z-index: 101;
         background-color: white;
-        .signUp-form {
-            padding-top: 50px;
-            padding-bottom: 50px;
+        #signUp-form {
+            padding-top: 20px;
+            padding-bottom: 30px;
         }
         h2 {
             margin: 0;
